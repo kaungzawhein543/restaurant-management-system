@@ -1,16 +1,26 @@
-========================================================================================================================
-THIS IS THE DYNAMIC SYSTEM FOR RESTAURANT
-========================================================================================================================
+# Restaurant Management System
 
--FEATURES (Not Finished Yet)
+## Description
 
---(User)
+This is a dynamic system for restaurants, designed to streamline the ordering process for customers and simplify menu management for administrators. Customers can place orders directly by scanning a QR code at their table, and admins can manage menus and categories efficiently.
 
----Users Can Order After Scanning QR Code From Table
----Users Can See Menus All In Once And Filter The Menus
+---
 
+## Features (Work in Progress)
 
---(Admin)
+### User Features
+- Users can order after scanning a QR code from their table.
+- Users can view the full menu at once.
+- Users can filter the menu items based on categories.
 
----Admin Can Create CRUD OF Menu
----Admin Can Create CRUD OF Menu's Category
+### Admin Features
+- Admin can perform full CRUD operations on menu items.
+- Admin can perform full CRUD operations on menu categories.
+
+---
+
+## Tech Stack
+> Add if relevant
+- Backend: Spring Boot
+- Frontend: Thymeleaf
+- Database: MySQL
