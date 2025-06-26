@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div th:fragment="side-bar">
+    <div class="side-bar-item">
+        <button type="button" th:onclick="'window.location.href=\'' + @{${WebUrl.DASHBOARD_URL}} + '\''">Dashboard
+        </button>
+    </div>
+    <div th:if="${session.userRoleList.contains(UserRole.SUPER_ADMIN) || session.userRoleList.contains(UserRole.ADMIN)}" class="side-bar-item">
+        <button type="button" th:onclick="'window.location.href=\'' + @{${WebUrl.USER_URL}} + '\''">Users</button>
+    </div>
+    <div class="side-bar-item">
+        <form th:action="@{${WebUrl.LOGOUT_URL}}" method="post">
+            <input type="submit" value="Logout" onclick="return confirm('Are you sure you want to logout?')">
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

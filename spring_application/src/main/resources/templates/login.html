@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" th:action="@{${WebUrl.LOGIN_URL}}" th:object="${user}">
+    <h2>Login</h2>
+    <h3 th:if="${status == ResponseStatus.FAILED}">Invalid username or password</h3>
+    <div class="input">
+        <input type="text" th:field="*{username}" placeholder="Username">
+    </div>
+    <div class="input">
+        <input type="password" th:field="*{password}" placeholder="Password">
+    </div>
+    <div class="input">
+        <input type="submit" value="Login">
+    </div>
+    <p><span>Do not you have an account?</span><a th:href="@{${WebUrl.REGISTER_URL}}">Register here</a></p>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+<form autocomplete="off" method="post" th:action="@{${WebUrl.REGISTER_URL}}" th:object="${user}">
+  <h2>Register</h2>
+  <h3 th:if="${status == ResponseStatus.FAILED}" th:text="${ERROR_MESSAGE}" class="error"></h3>
+  <div class="input">
+    <input autocomplete="new-username" type="text" th:field="*{username}" placeholder="Username">
+    <div th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></div>
+  </div>
+  <div class="input">
+    <input type="text" th:field="*{name}" placeholder="Full name">
+    <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+  </div>
+  <div class="input">
+    <input autocomplete="new-password" type="password" th:field="*{password}" placeholder="Password">
+    <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+  </div>
+  <div class="input">
+    <input type="number" th:field="*{age}" placeholder="Age">
+    <div th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></div>
+  </div>
+  <div class="input">
+    <input type="email" th:field="*{email}" placeholder="Email">
+    <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+  </div>
+  <div class="input">
+    <input type="submit" value="Register">
+  </div>
+  <p><span>Already have an account?</span><a th:href="@{${WebUrl.LOGIN_URL}}">Login here</a></p>
+</form>
+</body>
+</html>
