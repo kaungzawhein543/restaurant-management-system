@@ -20,7 +20,6 @@ This is a dynamic system for restaurants, designed to streamline the ordering pr
 ---
 
 ## Tech Stack
-> Add if relevant
 - Backend: Spring Boot
 - Frontend: Thymeleaf
 - Database: MySQL
