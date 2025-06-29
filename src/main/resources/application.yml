@@ -3,7 +3,7 @@ spring:
     name: Spring Application
 
   datasource:
-    url: jdbc:mysql://localhost:3306/restaurant_management_system
+    url: jdbc:mysql://localhost:3306/restaurant_management_system_db
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
