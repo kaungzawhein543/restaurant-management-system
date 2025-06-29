@@ -8,13 +8,6 @@ import com.mm.restaurant.application.utilities.WebUrl;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
-/**
- * GlobalModelAttribute Class.
- * <p>
- * </p>
- *
- * @author Zwel Naing Oo
- */
 
 @ControllerAdvice
 public class GlobalModelAttribute {

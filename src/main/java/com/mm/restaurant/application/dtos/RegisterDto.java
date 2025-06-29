@@ -8,13 +8,6 @@ import com.mm.restaurant.application.utilities.object_mapper.ValidMappable;
 import jakarta.validation.constraints.*;
 import lombok.Data;
 
-/**
- * RegisterDto Class.
- * <p>
- * </p>
- *
- * @author Zwel Naing Oo
- */
 @Data
 @ValidMappable(targets = {User.class})
 public final class RegisterDto implements Mappable {

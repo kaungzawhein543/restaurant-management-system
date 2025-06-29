@@ -1,13 +1,6 @@
 
 package com.mm.restaurant.application.utilities;
 
-/**
- * WebUrl Class.
- * <p>
- * </p>
- *
- * @author Zwel Naing Oo
- */
 
 public final class WebUrl {
 

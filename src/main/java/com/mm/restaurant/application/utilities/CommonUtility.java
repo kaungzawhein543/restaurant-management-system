@@ -1,13 +1,6 @@
 
 package com.mm.restaurant.application.utilities;
 
-/**
- * CommonUtility Class.
- * <p>
- * </p>
- *
- * @author Zwel Naing Oo
- */
 
 public final class CommonUtility {
 

@@ -4,13 +4,6 @@ package com.mm.restaurant.application.dtos.custom_validations;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 
-/**
- * PasswordValidator Class.
- * <p>
- * </p>
- *
- * @author Zwel Naing Oo
- */
 
 public class PasswordValidator implements ConstraintValidator<ValidPassword, String> {
 

@@ -19,13 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CompletionException;
 
-/**
- * GlobalExceptionHandler Class.
- * <p>
- * </p>
- *
- * @author Zwel Naing Oo
- */
+
 @Slf4j
 @ControllerAdvice
 public class GlobalExceptionHandler {

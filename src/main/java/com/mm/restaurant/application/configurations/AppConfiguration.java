@@ -6,13 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-/**
- * AppConfiguration Class.
- * <p>
- * </p>
- *
- * @author Zwel Naing Oo
- */
+
 @Configuration
 public class AppConfiguration {
 

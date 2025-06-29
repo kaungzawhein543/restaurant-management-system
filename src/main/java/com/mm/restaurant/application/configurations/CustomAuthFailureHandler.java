@@ -16,13 +16,6 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
-/**
- * CustomAuthFailureHandler Class.
- * <p>
- * </p>
- *
- * @author Zwel Naing Oo
- */
 
 @Component
 public class CustomAuthFailureHandler implements AuthenticationFailureHandler {

@@ -1,13 +1,6 @@
 
 package com.mm.restaurant.application.utilities.object_mapper;
 
-/**
- * NoPermissionObjectMappingException Class.
- * <p>
- * </p>
- *
- * @author Zwel Naing Oo
- */
 
 public class NoPermissionObjectMappingException extends RuntimeException {
 

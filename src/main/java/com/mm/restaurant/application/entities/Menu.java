@@ -1,6 +1,8 @@
 package com.mm.restaurant.application.entities;
 
+import com.mm.restaurant.application.constants.MenuStatus;
 import com.mm.restaurant.application.dtos.MenuDto;
+import com.mm.restaurant.application.utilities.object_mapper.Mappable;
 import com.mm.restaurant.application.utilities.object_mapper.ValidMappable;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -17,7 +19,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @ValidMappable(targets = {MenuDto.class})
-public class Menu {
+public class Menu implements Mappable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -30,5 +32,8 @@ public class Menu {
     @CreationTimestamp
     private LocalDateTime createdAt;
     @Column(nullable = false)
-    private Boolean isActive;
+    @Enumerated(EnumType.STRING)
+    private MenuStatus isActive;
+
+
 }

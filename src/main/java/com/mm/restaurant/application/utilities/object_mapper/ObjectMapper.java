@@ -9,18 +9,12 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.Consumer;
 
-/**
- * ObjectMapper Class.
- * <p>
- * </p>
- *
- * @author Zwel Naing Oo Zwe Naing Oo
- */
+
 public final class ObjectMapper {
 
     private ObjectMapper() {}
 
-    private static final ModelMapper MODEL_MAPPER = new ModelMapper();
+    public static final ModelMapper MODEL_MAPPER = new ModelMapper();
 
     public static void configure(Consumer<ModelMapper> configure) {
         configure.accept(MODEL_MAPPER);
