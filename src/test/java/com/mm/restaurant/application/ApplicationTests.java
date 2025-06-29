@@ -1,4 +1,4 @@
-package com.mm.zwel.application;
+package com.mm.restaurant.application;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
