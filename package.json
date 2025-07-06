@@ -4,7 +4,8 @@
   "description": "This is a dynamic system for restaurants, designed to streamline the ordering process for customers and simplify menu management for administrators. Customers can place orders directly by scanning a QR code at their table, and admins can manage menus and categories efficiently.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Test : Restaurant Management System.\" && exit 1"
+    "test": "echo \"Test : Restaurant Management System.\" && exit 1",
+    "tailwind": "tailwindcss -i ./src/main/resources/static/css/input.css -o ./src/main/resources/static/css/output.css --watch"
   },
   "keywords": [],
   "author": "",
