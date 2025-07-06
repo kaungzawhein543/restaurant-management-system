@@ -9,11 +9,15 @@
   <h2>Register</h2>
   <h3 th:if="${status == ResponseStatus.FAILED}" th:text="${ERROR_MESSAGE}" class="error"></h3>
   <div class="input">
-    <input autocomplete="new-username" type="text" th:field="*{username}" placeholder="Username">
+    <label>
+      <input autocomplete="new-username" type="text" th:field="*{username}" placeholder="Username">
+    </label>
     <div th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></div>
   </div>
   <div class="input">
-    <input type="text" th:field="*{name}" placeholder="Full name">
+    <label>
+      <input type="text" th:field="*{name}" placeholder="Full name">
+    </label>
     <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
   </div>
   <div class="input">
