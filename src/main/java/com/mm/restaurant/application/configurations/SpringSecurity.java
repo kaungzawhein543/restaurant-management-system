@@ -33,7 +33,7 @@ public class SpringSecurity {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http
                 .authorizeHttpRequests(request -> request
-                        .requestMatchers(WebUrl.AUTH_URL + "/**").permitAll()
+                        .requestMatchers(WebUrl.AUTH_URL + "/**", "css/output.css").permitAll()
                         .anyRequest().authenticated()
                 )
                 .formLogin(login -> login
