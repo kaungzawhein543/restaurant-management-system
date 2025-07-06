@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/output.css}">
 </head>
 <body>
 <h1>Dashboard</h1>
 <div id="container" style="display: flex; gap: 20px;">
     <div th:replace="fragments/side-bar :: side-bar"></div>
     <div id="body">
-        <p>BODY</p>
+        <p class="bg-red-50">BODY</p>
     </div>
 </div>
 </body>
