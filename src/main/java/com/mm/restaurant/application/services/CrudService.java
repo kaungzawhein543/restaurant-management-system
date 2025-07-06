@@ -15,14 +15,14 @@ public abstract class CrudService<E extends Mappable, I> {
 
     protected final JpaRepository<E, I> jpaRepository;
     private final Class<E> entityClass;
-    private static final NoResourceFoundException NO_RESOURCE_FOUND = new NoResourceFoundException("No Resource Found");
+    private static final NoResourceFoundException NO_RESOURCE_FOUND = new NoResourceFoundException("No resource found");
 
-    public CrudService(JpaRepository<E, I> jpaRepository, Class<E> entityClass) {
+    public CrudService(final JpaRepository<E, I> jpaRepository,final Class<E> entityClass) {
         this.jpaRepository = jpaRepository;
         this.entityClass = entityClass;
     }
 
-    public <S extends Mappable,D extends Mappable> D save(S dtoSource,Class<D> dtoClass){
+    public <S extends Mappable,D extends Mappable> D save(final S dtoSource,final Class<D> dtoClass){
         return ObjectMapper.map(jpaRepository.save(ObjectMapper.map(dtoSource, entityClass)), dtoClass);
     }
 
@@ -34,7 +34,7 @@ public abstract class CrudService<E extends Mappable, I> {
 
         final E entity = jpaRepository.findById(id).orElseThrow(() -> NO_RESOURCE_FOUND);
 
-        ObjectMapper.MODEL_MAPPER.map(dtoSource, entity);
+        ObjectMapper.map(dtoSource, entity);
 
         return ObjectMapper.map(jpaRepository.save(entity), dtoClass);
 
@@ -44,7 +44,7 @@ public abstract class CrudService<E extends Mappable, I> {
         return ObjectMapper.map(jpaRepository.findById(id).orElseThrow(() -> NO_RESOURCE_FOUND), dtoClass);
     }
 
-    public <S extends Mappable> List<S> findAll(Class<S> dtoClass) {
+    public <S extends Mappable> List<S> findAll(final Class<S> dtoClass) {
         return ObjectMapper.map(jpaRepository.findAll(), dtoClass);
     }
 
