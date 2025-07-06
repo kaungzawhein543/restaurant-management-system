@@ -1,5 +1,7 @@
 package com.mm.restaurant.application.entities;
 
+import com.mm.restaurant.application.configurations.AppConfiguration;
+import com.mm.restaurant.application.configurations.SpringSecurity;
 import com.mm.restaurant.application.constants.UserRole;
 import com.mm.restaurant.application.dtos.UserDto;
 import com.mm.restaurant.application.utilities.object_mapper.Mappable;
@@ -9,9 +11,11 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Collection;
 import java.util.List;
@@ -46,5 +50,11 @@ public class User implements UserDetails, Mappable {
     @Override
     public String getUsername() {
         return this.email;
+    }
+
+    @PrePersist
+    private void prePersist(){
+        password= SpringSecurity.passwordEncoder.encode(password);
+        role=UserRole.ADMIN;
     }
 }

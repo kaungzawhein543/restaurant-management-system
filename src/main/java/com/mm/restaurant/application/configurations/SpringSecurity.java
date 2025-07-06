@@ -4,6 +4,7 @@ package com.mm.restaurant.application.configurations;
 import com.mm.restaurant.application.services.UserService;
 import com.mm.restaurant.application.utilities.WebUrl;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -14,12 +15,19 @@ import org.springframework.security.web.SecurityFilterChain;
 
 
 @Configuration
-@RequiredArgsConstructor
 public class SpringSecurity {
+
 
     private final CustomAuthFailureHandler customAuthFailureHandler;
     private final UserService userService;
-    private final PasswordEncoder passwordEncoder;
+    public static PasswordEncoder passwordEncoder;
+
+    public SpringSecurity(CustomAuthFailureHandler customAuthFailureHandler, UserService userService, @Autowired PasswordEncoder passwordEncoder) {
+        this.customAuthFailureHandler = customAuthFailureHandler;
+        this.userService = userService;
+        SpringSecurity.passwordEncoder = passwordEncoder;
+    }
+
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -50,6 +58,8 @@ public class SpringSecurity {
         builder.userDetailsService(userService).passwordEncoder(passwordEncoder);
         return builder.build();
     }
+
+
 
 }
 

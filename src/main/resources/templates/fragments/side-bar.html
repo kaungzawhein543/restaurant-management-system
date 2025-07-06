@@ -11,7 +11,7 @@
         <button type="button" th:onclick="'window.location.href=\'' + @{${WebUrl.DASHBOARD_URL}} + '\''">Dashboard
         </button>
     </div>
-    <div th:if="${session.userRoleList.contains(UserRole.SUPER_ADMIN) || session.userRoleList.contains(UserRole.ADMIN)}" class="side-bar-item">
+    <div th:if="${session.userRoleList.contains(UserRole.ADMIN)}" class="side-bar-item">
         <button type="button" th:onclick="'window.location.href=\'' + @{${WebUrl.USER_URL}} + '\''">Users</button>
     </div>
     <div class="side-bar-item">

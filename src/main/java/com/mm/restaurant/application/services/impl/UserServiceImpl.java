@@ -65,5 +65,4 @@ public class UserServiceImpl extends CrudService<User, Long> implements UserServ
         return List.of();
     }
 
-
 }
