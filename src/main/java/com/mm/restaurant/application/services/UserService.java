@@ -13,5 +13,5 @@ public interface UserService extends UserDetailsService  {
 
     List<UserRole> getCurrentUserRoles();
 
-
+    Boolean checkAdmin();
 }
