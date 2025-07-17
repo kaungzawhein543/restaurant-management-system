@@ -9,7 +9,7 @@ import jakarta.validation.constraints.*;
 import lombok.Data;
 
 @Data
-@ValidMappable(targets = {User.class})
+@ValidMappable(targets = {User.class, RegisterDto.class})
 public final class RegisterDto implements Mappable {
     @NotEmpty(message = "Username must not be empty.")
     private String username;
