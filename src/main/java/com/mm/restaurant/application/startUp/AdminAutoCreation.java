@@ -4,6 +4,7 @@ import com.mm.restaurant.application.dtos.RegisterDto;
 import com.mm.restaurant.application.entities.User;
 import com.mm.restaurant.application.services.CrudService;
 import com.mm.restaurant.application.services.UserService;
+import com.mm.restaurant.application.utilities.object_mapper.ObjectMapper;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -23,13 +24,8 @@ public class AdminAutoCreation implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        RegisterDto userDto = new RegisterDto();
-        userDto.setName(adminProperties.getName());
-        userDto.setAge(adminProperties.getAge());
-        userDto.setEmail(adminProperties.getEmail());
-        userDto.setPassword(adminProperties.getPassword());
         if (!userService.checkAdmin()) {
-            crudService.save(userDto,RegisterDto.class);
+            crudService.save(ObjectMapper.map(adminProperties, RegisterDto.class),RegisterDto.class);
         }
     }
 

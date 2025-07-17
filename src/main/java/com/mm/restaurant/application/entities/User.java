@@ -5,6 +5,7 @@ import com.mm.restaurant.application.configurations.SpringSecurity;
 import com.mm.restaurant.application.constants.UserRole;
 import com.mm.restaurant.application.dtos.RegisterDto;
 import com.mm.restaurant.application.dtos.UserDto;
+import com.mm.restaurant.application.startUp.AdminProperties;
 import com.mm.restaurant.application.utilities.object_mapper.Mappable;
 import com.mm.restaurant.application.utilities.object_mapper.ValidMappable;
 import jakarta.persistence.*;
@@ -27,7 +28,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@ValidMappable(targets = {UserDto.class, RegisterDto.class})
+@ValidMappable(targets = {UserDto.class, RegisterDto.class, AdminProperties.class})
 public class User implements UserDetails, Mappable {
 
     @Id
