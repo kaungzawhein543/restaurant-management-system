@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
     <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/css/output.css}">
 </head>
 <body>
-<div class="container flex justify-center items-center">
-    <div class="border-2 rounded-sm">
-        <form method="post" th:action="@{${WebUrl.LOGIN_URL}}" th:object="${user}">
-            <h2 class="text-red-500">Login</h2>
-            <h3 th:if="${status == ResponseStatus.FAILED}">Invalid username or password</h3>
-            <div class="input">
+<div class="flex justify-center items-center min-h-screen h-full w-full bg-gray-300">
+    <div class="">
+        <form method="post" th:action="@{${WebUrl.LOGIN_URL}}" th:object="${user}" class="p-3 bg-white items-center flex-col flex gap-4 shadow-sm">
+
+            <h2 class="text-blue-400 font-bold text-xl">Login</h2>
+            <p class="text-xs text-red-500" th:if="${status == ResponseStatus.FAILED}">Invalid username or password</p>
+            <div class="text-base">
                 <label>
-                    <input type="text" th:field="*{username}" placeholder="Username">
+                    <input class="w-60 p-1 border border-blue-400 placeholder-gray-200 border-opacity-50" type="text" th:field="*{username}" placeholder="Username">
                 </label>
             </div>
-            <div class="input">
+            <div class="text-base">
                 <label>
-                    <input type="password" th:field="*{password}" placeholder="Password">
+                    <input class="w-60 p-1 border border-blue-400 placeholder-gray-200 border-opacity-50" type="password" th:field="*{password}" placeholder="Password">
                 </label>
             </div>
-            <div class="input">
-                <input type="submit" value="Login">
+            <div class="text-base">
+                <input class="border-opacity-50 w-60 p-1 border border-blue-400 cursor-pointer bg-blue-400 text-white hover:bg-white hover:text-blue-400" type="submit" value="Login">
             </div>
-            <p><span>Don't you have an account?</span><a th:href="@{${WebUrl.REGISTER_URL}}">Register here</a></p>
+            <p class="text-xs"><span>Don't you have an account?</span><a class="cursor-pointer underline text-blue-400 hover:text-gray-500" th:href="@{${WebUrl.REGISTER_URL}}"> Register here</a></p>
         </form>
     </div>
 </div>
