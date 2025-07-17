@@ -13,6 +13,7 @@ import com.mm.restaurant.application.utilities.CommonUtility;
 import com.mm.restaurant.application.utilities.object_mapper.ObjectMapper;
 import com.sun.jdi.request.DuplicateRequestException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Example;
 import org.springframework.security.core.Authentication;
@@ -27,6 +28,9 @@ import java.util.List;
 
 @Service
 public class UserServiceImpl extends CrudService<User, Long> implements UserService {
+
+    @Value("${admin.name}")
+    private String name;
 
     public UserServiceImpl(UserRepository userRepository) {
         super(userRepository, User.class);
@@ -63,6 +67,12 @@ public class UserServiceImpl extends CrudService<User, Long> implements UserServ
         }
 
         return List.of();
+    }
+
+    @Override
+    public Boolean checkAdmin() {
+       return jpaRepository.findOne(Example.of(User.builder().name(name).build()))
+                .isPresent();
     }
 
 }
